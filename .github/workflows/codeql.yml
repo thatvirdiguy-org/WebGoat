@@ -75,18 +75,11 @@ jobs:
         java-version: 17
         architecture: x64
 
-    - name: Checkout CodeQL config
-      uses: actions/checkout@v4
-      with:
-        repository: thatvirdiguy-org/security-team-codeql-config
-        path: thatvirdiguy-org/security-team-codeql-config
-
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-        config-file: 
-          thatvirdiguy-org/security-team-codeql-config/codeql/codeql-config.yml
+        config-file: thatvirdiguy-org/security-team-codeql-config/codeql/codeql-config.yml
         external-repository-token: ${{ secrets.ACCESS_TOKEN }}
         build-mode: ${{ matrix.build-mode }}
 
