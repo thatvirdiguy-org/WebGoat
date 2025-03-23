@@ -12,6 +12,12 @@ jobs:
   depSubmissionAPIUpload:
     name: Analyze
     runs-on: 'ubuntu-latest'
+    permissions:
+      contents: write
+      id-token: write
+      security-events: write
+      actions: read
+      packages: read
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
